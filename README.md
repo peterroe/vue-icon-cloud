@@ -182,3 +182,9 @@ See `LICENSE` for more information.
 ## Contact
 
 Teague Stockwell - [LinkedIn](https://www.linkedin.com/in/teague-stockwell)
+
+
+----------------------------------------------------------------------
+
+* simpleIcon 改为本地的，不依靠网络
+* 更友好的出口 https://magicui.design/docs/components/icon-cloud

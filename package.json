@@ -91,6 +91,7 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@csstools/convert-colors": "^2.0.0"
+    "@csstools/convert-colors": "^2.0.0",
+    "vue": "^3.5.13"
   }
 }
