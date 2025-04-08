@@ -10,7 +10,6 @@ import DynamicIconCloud from '../../demo.vue'
 
 <style scoped>
 .wrapper {
-  background-color: #ccc;
-  width: 200px;
+  background-color: aliceblue;
 }
 </style>

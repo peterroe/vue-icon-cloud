@@ -1,27 +1,40 @@
 <template>
-  <Cloud v-if="icons.length > 0" class="cloud">
-    <SimpleIcon
-      class="icon"
-      v-for="icon in icons"
-      :key="icon.title"
-      :icon="icon"
-      :size="82"
-      :aProps="{ onClick: preventDefault }"
-    />
+  <Cloud :images="images" class="relative flex size-full items-center justify-center overflow-hidden">
   </Cloud>
+  <Cloud :icons="[
+    IconAccountBox,
+    IconAbTesting,
+    IconAccessPoint,
+    IconZodiacCancer,
+    IconZodiacCancer2,
+    IconZodiacCancer3,
+    IconZodiacCancer2,
+    IconZodiacCancer3,
+    IconZodiacCancer,
+  ]" />
+  <IconAccountBox />
+  <IconAbTesting />
+  <IconAccessPoint />
+  <IconZodiacCancer />
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
-import Cloud from './src/renderers/cloud.vue'
-import SimpleIcon from './src/renderers/simple_icon.vue'
+import IconAccountBox from '~icons/logos/active-campaign-icon'
+import IconAbTesting from '~icons/logos/angular-icon'
+import IconAccessPoint from '~icons/logos/awesome'
+import IconZodiacCancer from '~icons/logos/astro'
+import IconZodiacCancer2 from '~icons/logos/box'
+import IconZodiacCancer3 from '~icons/logos/zig'
+import { ref, onMounted, watch, computed, h } from 'vue'
+import Cloud from './src/cloud.vue'
+// import Cloud from './src/renderers/cloud.vue'
 import { fetchSimpleIcons } from './src/utils/fetch_simple_icons'
+var img = new Image();
 
 const slugs = ref([
   "typescript",
   "javascript",
   "dart",
-  "java",
   "react",
   "flutter",
   "android",
@@ -31,7 +44,6 @@ const slugs = ref([
   "express",
   "nextdotjs",
   "prisma",
-  "amazonaws",
   "postgresql",
   "firebase",
   "nginx",
@@ -44,11 +56,17 @@ const slugs = ref([
   "jira",
   "github",
   "gitlab",
-  "visualstudiocode",
   "androidstudio",
   "sonarqube",
   "figma",
 ])
+
+const images = computed(() => {
+  return slugs.value.map(
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`,
+  );
+})
+
 
 setTimeout(() => {
   slugs.value.push("yarn")
@@ -56,7 +74,7 @@ setTimeout(() => {
   console.log("sug", slugs.value)
 },3000)
 
-const icons = ref<Array<any>>([])
+const icons = ref<any[]>([])
 
 const preventDefault = (e: Event) => {
   e.preventDefault()
