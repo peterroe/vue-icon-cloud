@@ -28,8 +28,9 @@ interface Icon {
 }
 
 interface Props {
-  icons?: any[] // Vue components array
+  icons?: any[] // sVue components array
   images?: string[]
+  iconStyle?: any
 }
 
 const props = defineProps<Props>()
@@ -91,9 +92,13 @@ async function initializeIconCanvases() {
         // offCtx.scale(0.4, 0.4)
         // offCtx.scale(2, 2)
         // Note: You might need to adjust this part for Vue components
+        const defaultStyle = {
+          'font-size': '32px'
+        }
+        const iconStyle = Object.assign(props.iconStyle || {}, defaultStyle)
         let svgString = await renderToString(h(item, {
-          style: 'font-size: 30px',
-          xmlns: "http://www.w3.org/2000/svg"
+          xmlns: "http://www.w3.org/2000/svg",
+          ...iconStyle
         }))
         // 往  svg 中加入
         console.log('svgString', svgString)

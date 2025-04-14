@@ -11,7 +11,9 @@
     IconZodiacCancer2,
     IconZodiacCancer3,
     IconZodiacCancer,
-  ]" />
+  ]" :icon-style="{
+    'font-size': '30px'
+  }" />
   <IconAccountBox />
   <IconAbTesting />
   <IconAccessPoint />
@@ -88,3 +90,9 @@ watch(slugs, async newValue => {
 }, { immediate: true, deep: true })
 
 </script>
+
+<style lang="css">
+.core-icon {
+  font-size: 30px,
+}
+</style>
