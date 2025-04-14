@@ -1,13 +1,12 @@
 <template>
   <canvas
     ref="canvasRef"
-    :width="400"
-    :height="400"
+    :width="300"
+    :height="300"
     @mousedown="handleMouseDown"
     @mousemove="handleMouseMove"
     @mouseup="handleMouseUp"
     @mouseleave="handleMouseUp"
-    class="rounded-lg"
     aria-label="Interactive 3D Icon Cloud"
     role="img"
   />
@@ -74,8 +73,11 @@ async function initializeIconCanvases() {
     offscreen.width = 40
     offscreen.height = 40
     const offCtx = offscreen.getContext('2d')
+    console.log({offCtx})
+
     if (offCtx) {
       if (props.images) {
+        console.log("11111", props.images)
         const img = new Image()
         img.crossOrigin = 'anonymous'
         img.src = items[index] as string
@@ -84,7 +86,7 @@ async function initializeIconCanvases() {
           offCtx.beginPath()
           offCtx.arc(20, 20, 20, 0, Math.PI * 2)
           offCtx.closePath()
-          offCtx.clip()
+          // offCtx.clip()
           offCtx.drawImage(img, 0, 0, 40, 40)
           imagesLoadedRef.value[index] = true
         }
@@ -95,6 +97,7 @@ async function initializeIconCanvases() {
         const defaultStyle = {
           'font-size': '32px'
         }
+
         const iconStyle = Object.assign(props.iconStyle || {}, defaultStyle)
         let svgString = await renderToString(h(item, {
           xmlns: "http://www.w3.org/2000/svg",
@@ -126,10 +129,7 @@ async function initializeIconCanvases() {
     return offscreen
   }))
 
-  console.log('iconCanvasesRef.value', iconCanvasesRef.value)
 }
-
-
 
 // Generate initial positions
 function generateInitialPositions() {
@@ -255,10 +255,14 @@ const animate = () => {
 
   const centerX = canvas.width / 2
   const centerY = canvas.height / 2
+  // 对角线的一半
   const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY)
+  // 鼠标相对于画布中的偏移
   const dx = mousePos.x - centerX
   const dy = mousePos.y - centerY
+  // 鼠标相对画布中心点的直线距离
   const distance = Math.sqrt(dx * dx + dy * dy)
+  // 旋转速度
   const speed = 0.003 + (distance / maxDistance) * 0.01
 
   if (targetRotation.value) {
@@ -280,7 +284,6 @@ const animate = () => {
     rotationRef.x += (dy / canvas.height) * speed
     rotationRef.y += (dx / canvas.width) * speed
   }
-
   iconPositions.value.forEach((icon, index) => {
     const cosX = Math.cos(rotationRef.x)
     const sinX = Math.sin(rotationRef.x)

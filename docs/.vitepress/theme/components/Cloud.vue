@@ -1,7 +1,7 @@
 <template>
-  <Cloud :images="images" class="relative flex size-full items-center justify-center overflow-hidden">
+  <Cloud :images="images" class="cloud relative flex items-center justify-center overflow-hidden">
   </Cloud>
-  <Cloud :icons="[
+  <!-- <Cloud :icons="[
     IconAccountBox,
     IconAbTesting,
     IconAccessPoint,
@@ -17,7 +17,7 @@
   <IconAccountBox />
   <IconAbTesting />
   <IconAccessPoint />
-  <IconZodiacCancer />
+  <IconZodiacCancer /> -->
 </template>
 
 <script setup lang="ts">
@@ -30,9 +30,9 @@ import IconZodiacCancer3 from '~icons/logos/zig'
 import { ref, onMounted, watch, computed, h } from 'vue'
 
 console.log("IconAbTesting", IconAbTesting)
-import Cloud from './src/cloud.vue'
+import Cloud from '../../../../src/cloud.vue'
 // import Cloud from './src/renderers/cloud.vue'
-import { fetchSimpleIcons } from './src/utils/fetch_simple_icons'
+// import { fetchSimpleIcons } from '../../../../src/utils/fetch_simple_icons'
 var img = new Image();
 
 const slugs = ref([
@@ -72,29 +72,33 @@ const images = computed(() => {
 })
 
 
-setTimeout(() => {
-  slugs.value.push("yarn")
-  slugs.value.shift()
-  console.log("sug", slugs.value)
-},3000)
+// setTimeout(() => {
+//   slugs.value.push("yarn")
+//   slugs.value.shift()
+//   console.log("sug", slugs.value)
+// },3000)
 
-const icons = ref<any[]>([])
+// const icons = ref<any[]>([])
 
-const preventDefault = (e: Event) => {
-  e.preventDefault()
-}
+// const preventDefault = (e: Event) => {
+//   e.preventDefault()
+// }
 
-watch(slugs, async newValue => {
-  console.log("slug cahg esd")
-  const result = await fetchSimpleIcons({ slugs: newValue })
-  console.log(result.simpleIcons)
-  icons.value = Object.values(result.simpleIcons)
-}, { immediate: true, deep: true })
+// watch(slugs, async newValue => {
+//   console.log("slug cahg esd")
+//   const result = await fetchSimpleIcons({ slugs: newValue })
+//   console.log(result.simpleIcons)
+//   icons.value = Object.values(result.simpleIcons)
+// }, { immediate: true, deep: true })
 
 </script>
 
 <style lang="css">
 .core-icon {
   font-size: 30px,
+}
+.cloud {
+  width: 300px;
+  height: 300px;
 }
 </style>
