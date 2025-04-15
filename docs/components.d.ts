@@ -20,6 +20,7 @@ declare module 'vue' {
     'GitHubStar copy': typeof import('./.vitepress/theme/components/GitHubStar copy.vue')['default']
     HeadFigure: typeof import('./.vitepress/theme/components/HeadFigure.vue')['default']
     HomePage: typeof import('./.vitepress/theme/components/HomePage.vue')['default']
+    ICarbonLogoGithub: typeof import('~icons/carbon/logo-github')['default']
     LinkGrid: typeof import('./.vitepress/theme/components/LinkGrid.vue')['default']
     Mermaid: typeof import('./.vitepress/theme/components/Mermaid.vue')['default']
     NpmLink: typeof import('./.vitepress/theme/components/NpmLink.vue')['default']

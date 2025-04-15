@@ -27,7 +27,8 @@ interface Icon {
 }
 
 interface Props {
-  icons?: any[] // sVue components array
+  // @ts-ignore
+  icons?: any[]
   images?: string[]
   iconStyle?: any
 }
@@ -67,17 +68,15 @@ async function initializeIconCanvases() {
 
   const items = props.icons || props.images || []
   imagesLoadedRef.value = new Array(items.length).fill(false)
-  console.log('items', props.images)
+  // @ts-ignore
   iconCanvasesRef.value = await Promise.all(items.map(async (item, index) => {
     const offscreen = document.createElement('canvas')
     offscreen.width = 40
     offscreen.height = 40
     const offCtx = offscreen.getContext('2d')
-    console.log({offCtx})
 
     if (offCtx) {
       if (props.images) {
-        console.log("11111", props.images)
         const img = new Image()
         img.crossOrigin = 'anonymous'
         img.src = items[index] as string
@@ -98,30 +97,23 @@ async function initializeIconCanvases() {
           'font-size': '32px'
         }
 
-        const iconStyle = Object.assign(props.iconStyle || {}, defaultStyle)
+        const iconStyle = Object.assign(defaultStyle, props.iconStyle || {})
         let svgString = await renderToString(h(item, {
           xmlns: "http://www.w3.org/2000/svg",
           ...iconStyle
         }))
         // 往  svg 中加入
-        console.log('svgString', svgString)
         const img = new Image()
         
         img.src = 'data:image/svg+xml;base64,' + btoa(svgString)
         img.onload = () => {
-          console.log('imgimgimgimgimgsrc', img.src)
-          // img.onload = () => {
-          console.log('222222', img.width, img.height)
-          // offCtx.clearRect(0, 0, offscreen.width, offscreen.height)
           offscreen.height = img.height
           offscreen.style.height = img.height + 'px'
           offscreen.width = img.width
           offscreen.style.width = img.width + 'px'
 
-          // const offCtx = offscreen.getContext('2d')
           offCtx.drawImage(img, 0, 0)
           imagesLoadedRef.value[index] = true
-          // offCtx.fillRect(0, 0, offscreen.width, offscreen.height);
 
         }
       }

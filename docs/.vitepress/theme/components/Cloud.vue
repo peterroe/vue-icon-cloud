@@ -1,7 +1,7 @@
 <template>
   <Cloud :images="images" class="cloud relative flex items-center justify-center overflow-hidden">
   </Cloud>
-  <!-- <Cloud :icons="[
+  <Cloud :icons="[
     IconAccountBox,
     IconAbTesting,
     IconAccessPoint,
@@ -17,7 +17,7 @@
   <IconAccountBox />
   <IconAbTesting />
   <IconAccessPoint />
-  <IconZodiacCancer /> -->
+  <IconZodiacCancer />
 </template>
 
 <script setup lang="ts">
