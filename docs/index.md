@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "文档模版"
+title: "Vue Icon Cloud"
 
 hero:
   image:

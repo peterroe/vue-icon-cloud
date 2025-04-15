@@ -18,24 +18,26 @@ $ yarn add vue-icon-cloud
 ```
 
 <script setup lang="ts">
-import IconAccountBox from '~icons/logos/active-campaign-icon'
-import IconAbTesting from '~icons/logos/angular-icon'
-import IconAccessPoint from '~icons/logos/awesome'
-import IconLinkedin from '~icons/logos/linkedin'
-import IconNuxt from '~icons/logos/nuxt'
+import IconSvelte from '~icons/logos/svelte-icon'
+import IconAwesome from '~icons/logos/awesome'
 import IconZig from '~icons/logos/zig'
-import IconGo from '~icons/logos/go'
+import IconGithub from '~icons/logos/github'
 import IconGitlab from '~icons/logos/gitlab'
-import IconReact from '~icons/logos/react'
-import IconFigma from '~icons/logos/figma'
+import IconAstro from '~icons/logos/astro-icon'
 import IconDocker from '~icons/logos/docker'
 import IconGit from '~icons/logos/git'
+import IconReact from '~icons/logos/react'
+import IconNuxt from '~icons/logos/nuxt'
+import IconGo from '~icons/logos/go'
 import IconSolidjs from '~icons/logos/solidjs-icon'
 import IconVscode from '~icons/logos/visual-studio-code'
 import IconGithubCopilot from '~icons/logos/github-copilot'
+import IconNuxtIcon from '~icons/logos/nuxt-icon'
+import IconHomeBrew from '~icons/logos/homebrew'
 
 import { ref, onMounted, watch, computed, h } from 'vue'
 import IconCloud from '../../src/cloud.vue'
+import TableDemo from '../.vitepress/theme/components/TableDemo.vue'
 
 const slugs = ref([
   "typescript",
@@ -140,23 +142,27 @@ Recommended to use <GitHubLink repo="unplugin/unplugin-icons" />, which support 
 <template>
   <IconCloud
     :icons="[
-      IconAngular,IconAwesome,
-      IconZig,IconGithub,IconGitlab,
-      IconFigma,IconDocker,IconGit,
+      IconSvelte,IconAwesome,
+      IconZig,IconGit,
+      IconAstro,IconDocker,
       IconReact,IconNuxt,IconGo,
       IconVscode,IconSolidjs,IconGithubCopilot,
     ]"
   />
 </template>
 <script setup lang="ts">
-import IconAngular from '~icons/logos/angular-icon'
+import IconSvelte from '~icons/logos/svelte-icon'
 import IconAwesome from '~icons/logos/awesome'
 import IconZig from '~icons/logos/zig'
-import IconGithub from '~icons/logos/github'
-import IconGitlab from '~icons/logos/gitlab'
-import IconFigma from '~icons/logos/figma'
+import IconAstro from '~icons/logos/astro-icon'
 import IconDocker from '~icons/logos/docker'
 import IconGit from '~icons/logos/git'
+import IconReact from '~icons/logos/react'
+import IconNuxt from '~icons/logos/nuxt'
+import IconGo from '~icons/logos/go'
+import IconVscode from '~icons/logos/visual-studio-code'
+import IconSolidjs from '~icons/logos/solidjs-icon'
+import IconGithubCopilot from '~icons/logos/github-copilot'
 
 import IconCloud from 'vue-icon-cloud'
 </script>
@@ -165,12 +171,10 @@ import IconCloud from 'vue-icon-cloud'
 </template>
 <template #play>
   <IconCloud :icons="[
-    IconAngular,
+    IconSvelte,
     IconAwesome,
     IconZig,
-    IconGithub,
-    IconGitlab,
-    IconFigma,
+    IconAstro,
     IconDocker,
     IconGit,
     IconReact,
@@ -192,28 +196,28 @@ You can also control the size of the svg. The `iconStyle` property will directly
 <template>
   <IconCloud
     :icons="[
-      IconAngular,IconAwesome,
-      IconGithub,IconGitlab,IconFigma,
-      IconGit,IconReact,IconGo,
+      IconSvelte,IconAwesome,IconNuxtIcon,
+      IconAstro,IconGit,IconReact,IconGo,
       IconVscode,IconSolidjs,IconGithubCopilot,
+      IconHomeBrew,
     ]"
     :iconStyle="{
-      'font-size': '50px',
+      'font-size': '40px',
     }"
   />
 </template>
 <script setup lang="ts">
-import IconAngular from '~icons/logos/angular-icon'
+import IconSvelte from '~icons/logos/svelte-icon'
 import IconAwesome from '~icons/logos/awesome'
-import IconGithub from '~icons/logos/github'
-import IconGitlab from '~icons/logos/gitlab'
-import IconFigma from '~icons/logos/figma'
+import IconNuxtIcon from '~icons/logos/nuxt-icon'
+import IconAstro from '~icons/logos/astro-icon'
 import IconGit from '~icons/logos/git'
 import IconReact from '~icons/logos/react'
 import IconGo from '~icons/logos/go'
 import IconVscode from '~icons/logos/visual-studio-code'
 import IconSolidjs from '~icons/logos/solidjs-icon'
 import IconGithubCopilot from '~icons/logos/github-copilot'
+import IconHomeBrew from '~icons/logos/homebrew'
 
 import IconCloud from 'vue-icon-cloud'
 </script>
@@ -223,20 +227,20 @@ import IconCloud from 'vue-icon-cloud'
 <template #play>
   <IconCloud
     :icons="[
-      IconAngular,
+      IconSvelte,
       IconAwesome,
-      IconGithub,
-      IconGitlab,
-      IconFigma,
+      IconNuxtIcon,
+      IconAstro,
       IconGit,
       IconReact,
       IconGo,
       IconVscode,
       IconSolidjs,
       IconGithubCopilot,
+      IconHomeBrew
     ]"
     :iconStyle="{
-      'font-size': '50px',
+      'font-size': '40px',
     }"
   />
 </template>

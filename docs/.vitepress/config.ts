@@ -50,10 +50,10 @@ export default defineConfig({
   description,
   outDir: './dist',
   // just need when you want to deploy to github
-  // base: '/docs/',
+  base: '/vue-icon-cloud/',
   head: [
-    ['link', { rel: 'icon', href: '/docs/favicon.svg', type: 'image/svg+xml' }],
-    ['link', { rel: 'alternate icon', href: '/docs/favicon.ico', type: 'image/png', sizes: '16x16' }],
+    ['link', { rel: 'icon', href: '/vue-icon-cloud/favicon.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'alternate icon', href: '/vue-icon-cloud/favicon.ico', type: 'image/png', sizes: '16x16' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { name: 'og:title', content: title }],
     ['meta', { name: 'og:description', content: description }],
@@ -187,11 +187,11 @@ export default defineConfig({
       '/guide/': SidebarGuide,
     },
     editLink: {
-      pattern: 'https://github.com/peterroe/docs/edit/main/:path',
+      pattern: 'https://github.com/peterroe/vue-icon-cloud/edit/main/:path',
       text: 'Suggest changes to this page',
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/peterroe/docs' },
+      { icon: 'github', link: 'https://github.com/peterroe/vue-icon-cloud' },
     ],
     footer: {
       message: 'Released under the MIT License.',

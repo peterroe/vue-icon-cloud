@@ -1,39 +1,12 @@
 <template>
   <Cloud :images="images" class="cloud relative flex items-center justify-center overflow-hidden">
   </Cloud>
-  <Cloud :icons="[
-    IconAccountBox,
-    IconAbTesting,
-    IconAccessPoint,
-    IconZodiacCancer,
-    IconZodiacCancer2,
-    IconZodiacCancer3,
-    IconZodiacCancer2,
-    IconZodiacCancer3,
-    IconZodiacCancer,
-  ]" :icon-style="{
-    'font-size': '30px'
-  }" />
-  <IconAccountBox />
-  <IconAbTesting />
-  <IconAccessPoint />
-  <IconZodiacCancer />
 </template>
 
 <script setup lang="ts">
-import IconAccountBox from '~icons/logos/active-campaign-icon'
-import IconAbTesting from '~icons/logos/angular-icon'
-import IconAccessPoint from '~icons/logos/awesome'
-import IconZodiacCancer from '~icons/logos/astro'
-import IconZodiacCancer2 from '~icons/logos/box'
-import IconZodiacCancer3 from '~icons/logos/zig'
 import { ref, onMounted, watch, computed, h } from 'vue'
 
-console.log("IconAbTesting", IconAbTesting)
 import Cloud from '../../../../src/cloud.vue'
-// import Cloud from './src/renderers/cloud.vue'
-// import { fetchSimpleIcons } from '../../../../src/utils/fetch_simple_icons'
-var img = new Image();
 
 const slugs = ref([
   "typescript",
