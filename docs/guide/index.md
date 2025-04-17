@@ -38,6 +38,7 @@ import IconHomeBrew from '~icons/logos/homebrew'
 import { ref, onMounted, watch, computed, h } from 'vue'
 import IconCloud from '../../src/cloud.vue'
 import TableDemo from '../.vitepress/theme/components/TableDemo.vue'
+import GitHubLink from '../.vitepress/theme/components/GitHubLink.vue'
 
 const slugs = ref([
   "typescript",
@@ -118,20 +119,6 @@ const images = computed(() => {
 
 
 Or you can use the `icons` prop to pass in an array of SVG icons.
-
-```vue {2}
-<template>
-  <IconCloud :icons="[Icon1, Icon2, Icon3, Icon4, Icon5]" />
-</template>
-<script setup lang="ts">
-import IconCloud from 'vue-icon-cloud'
-import Icon1 from 'path/to/icon1.svg'
-import Icon2 from 'path/to/icon2.svg'
-import Icon3 from 'path/to/icon3.svg'
-import Icon4 from 'path/to/icon4.svg'
-import Icon5 from 'path/to/icon5.svg'
-</script>
-```
 
 Recommended to use <GitHubLink repo="unplugin/unplugin-icons" />, which support using the large number of icons provided by iconify.
 
